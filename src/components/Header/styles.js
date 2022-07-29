@@ -5,7 +5,8 @@ export default StyleSheet.create({
     marginTop: Platform === 'ios' ? 20 : 0,
     padding: 10,
     borderBottomWidth: 1,
-    borderColor: '#bbb'
+    borderColor: '#bbb',
+    width: '100%'
   },
 
   rowContainer: {
@@ -21,8 +22,8 @@ export default StyleSheet.create({
 
   title: {
     color: '#000',
-    fontFamily: 'Shelter_PersonalUseOnly',
+    fontFamily: 'shelter',
     height: 30,
-    fontSize: 28
+    fontSize: 25
   }
 })

@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Shelter_PersonalUseOnly.ttf",
+      "sha1": "6925d257e6f349dac9817e8cbb645882e897fe7d"
+    },
+    {
+      "path": "src/assets/fonts/shelter.otf",
+      "sha1": "59d67addcd9a699b53180472f2e009b936d92a8f"
+    }
+  ]
+}

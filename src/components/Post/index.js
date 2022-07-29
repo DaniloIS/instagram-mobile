@@ -6,11 +6,11 @@ import { Comments } from '../Comments';
 
 import styles from './styles';
 
-const Post = ({ image, comments }) => {
+const Post = ({ image, comments, email, nickname }) => {
   return (
     <View style={styles.container}>
       <Image source={image} style={styles.image} />
-      <Author email='danilo.santos.clear@gmail.com' nickname='DaniloIS' />
+      <Author email={email} nickname={nickname} />
       <Comments comments={comments} />
       <AddComment />
     </View>
