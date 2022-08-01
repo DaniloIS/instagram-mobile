@@ -6,13 +6,13 @@ import { Comments } from '../Comments';
 
 import styles from './styles';
 
-const Post = ({ image, comments, email, nickname }) => {
+const Post = ({ id, image, comments, email, nickname }) => {
   return (
     <View style={styles.container}>
       <Image source={image} style={styles.image} />
       <Author email={email} nickname={nickname} />
       <Comments comments={comments} />
-      <AddComment />
+      <AddComment postId={id} />
     </View>
   )
 }

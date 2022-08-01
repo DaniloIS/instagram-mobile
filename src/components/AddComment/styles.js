@@ -15,6 +15,7 @@ export default StyleSheet.create({
   },
 
   input: {
-    width: '90%'
+    width: '90%',
+    color: '#000'
   }
 })

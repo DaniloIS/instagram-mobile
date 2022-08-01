@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const AppBottomTabs = createBottomTabNavigator();
 
 import { Feed } from '../components/Feed';
+import { AddPhoto } from '../screens/AddPhoto';
+import { Profile } from '../screens/Profile';
 
 const DashboardRoutes = () => {
 
@@ -21,16 +23,14 @@ const DashboardRoutes = () => {
               }
             },
             headerShown: false,
-            tabBarShowLabel: false
-          })}
-            tabBarOptions={{
-            activeTintColor: 'black',
-            inactiveTintColor: 'gray'
-          }}>
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: 'black',
+            tabBarInactiveTintColor: 'gray'
+          })}>
 
               <AppBottomTabs.Screen name="Feed"  component={Feed} />
-              <AppBottomTabs.Screen name="AddPhoto"  component={Feed} />
-              <AppBottomTabs.Screen name="Profile"  component={Feed} />
+              <AppBottomTabs.Screen name="AddPhoto"  component={AddPhoto} />
+              <AppBottomTabs.Screen name="Profile"  component={Profile} />
           </AppBottomTabs.Navigator>
     );
 }

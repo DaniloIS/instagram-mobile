@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableWithoutFeedback as TWF, Alert, TextInput } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { addComment } from '../../store/actions/post';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
-const AddComment = () => {
+const AddComment = ({ postId}) => {
   const [comment, setComment] = useState('');
   const [editMode, setEditMode] = useState(false);
+  const user = useSelector(state => state.user);
+
+  const dispatch = useDispatch();
 
   function handleAddComment() {
+    dispatch(addComment({
+      postId,
+      comments: {
+        nickname: user.name,
+        comment
+      }
+    }))
+    setComment('')
+    setEditMode(false)
     Alert.alert('Adicionado!', comment)
   }
 
@@ -18,6 +32,7 @@ const AddComment = () => {
       <View style={styles.container}>
         <TextInput
           placeholder='Pode comentar...'
+          placeholderTextColor='#e3e3e3'
           style={styles.input}
           autoFocus={true}
           value={comment}
