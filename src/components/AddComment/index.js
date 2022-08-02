@@ -14,6 +14,10 @@ const AddComment = ({ postId}) => {
   const dispatch = useDispatch();
 
   function handleAddComment() {
+    if(!comment.trim) {
+      Alert.alert('Preencha corretamento!');
+      return
+    }
     dispatch(addComment({
       postId,
       comments: {
@@ -23,7 +27,6 @@ const AddComment = ({ postId}) => {
     }))
     setComment('')
     setEditMode(false)
-    Alert.alert('Adicionado!', comment)
   }
 
   let commentArea = null

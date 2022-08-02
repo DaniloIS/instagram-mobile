@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Text, TouchableOpacity, View, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
-import { login } from '../../store/actions/user';
+import { login, createUser } from '../../store/actions/user';
 
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
@@ -29,7 +29,8 @@ const SignInOrSignUp = () => {
       return
     }
 
-    dispatch(login(form));
+    if (signIn) dispatch(login(form));
+    dispatch(createUser(form))
     navigation.navigate('Home')
   }
 

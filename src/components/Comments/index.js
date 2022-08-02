@@ -5,10 +5,9 @@ import styles from './styles';
 
 const Comments = ({ comments }) => {
   let view = null;
-
   if(comments) {
     view = comments.map((item, idx) => {
-      return (
+      if(item.comment) return (
         <View style={styles.commentsContainer} key={idx}>
           <Text style={styles.nickname}>{item.nickname}: </Text>
           <Text style={styles.comment}>{item.comment}</Text>

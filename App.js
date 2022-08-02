@@ -1,8 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+axios.defaults.baseURL = 'https://instaclone-48202-default-rtdb.firebaseio.com';
 
+import { setMessage } from './src/store/actions/message';
 import storeConfig from './src/store/storeConfig';
 
 const store = storeConfig();
